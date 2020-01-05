@@ -1,31 +1,30 @@
 package com.zhangguo.spring.test;
 
-import java.util.List;
-
+import com.zhangguo.spring.entities.BookType;
+import com.zhangguo.spring.mapping.BookTypeDAO;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.zhangguo.spring.entities.BookType;
-import com.zhangguo.spring.mapping.BookTypeDAO;
+import java.util.List;
 
 public class TestMybatisSpring {
-	
-	@Test
-	public void test(){
-		  //³õÊ¼»¯ÈÝÆ÷
-		 ApplicationContext ctx=new ClassPathXmlApplicationContext("ApplicationContext.xml");
-		 
-		  //»ñµÃbean
-	        BookTypeDAO bookTypeDao=ctx.getBean("bookTypeDAO",BookTypeDAO.class);
 
-	        //·ÃÎÊÊý¾Ý¿â
-	        List<BookType> booktypes=bookTypeDao.getAllBookTypes();
-	        for (BookType bookType : booktypes) {
-	            System.out.println(bookType);
-	        }
+    @Test
+    public void test() {
+        //ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("ApplicationContext.xml");
+
+        //ï¿½ï¿½ï¿½bean
+        BookTypeDAO bookTypeDao = ctx.getBean("bookTypeDAO", BookTypeDAO.class);
+
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
+        List<BookType> booktypes = bookTypeDao.getAllBookTypes();
+        for (BookType bookType : booktypes) {
+            System.out.println(bookType);
+        }
 
 
-	}
+    }
 
 }
